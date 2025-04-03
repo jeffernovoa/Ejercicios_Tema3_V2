@@ -8,9 +8,18 @@ def hanoi(n, origen, destino, auxiliar, movimientos):
 
 def resolver_piramide():
     print("Resolviendo el Puzzle de la Pirámide de Piedras Preciosas...")
-    mostrar_todos = input("¿Desea ver todos los movimientos? (s/n): ").strip().lower() == 's'
+    
+    # Validar entrada del usuario
+    while True:
+        respuesta = input("¿Desea ver todos los movimientos? (sí/no): ").strip().lower()
+        if respuesta in ['sí', 'si', 'no']:
+            mostrar_todos = respuesta in ['sí', 'si']
+            break
+        else:
+            print("Por favor, responda con 'sí' o 'no'.")
+    
     movimientos = []
-    hanoi(74, 'A', 'C', 'B', movimientos)
+    hanoi(10, 'A', 'C', 'B', movimientos)
     
     # Determinar cuántos movimientos mostrar
     movimientos_a_mostrar = movimientos if mostrar_todos else movimientos[-100:]

@@ -41,9 +41,12 @@ class Polinomio:
 def resolver_encantamientos():
     p1 = Polinomio([1, 0, 2, 1])  # Representa x^3 + 2x + 1
     p2 = Polinomio([1, 1])  # Representa x + 1
+
+    print("\nPolinomio 1:", p1)
+    print("Polinomio 2:", p2)
     
-    print("Resta de polinomios:", p1.restar(p2))
-    print("División de polinomios:", p1.dividir(p2))
+    print("\nResta de polinomios:", p1.restar(p2))
+    print("\nDivisión de polinomios:", p1.dividir(p2))
     p1.eliminar_termino(1)
-    print("Polinomio después de eliminar término x:", p1)
-    print("¿Existe término x^1 en p1?:", p1.existe_termino(1))
+    print("\nPolinomio después de eliminar término x:", p1)
+    print("\n¿Existe término x^1 en p1?:", p1.existe_termino(1))

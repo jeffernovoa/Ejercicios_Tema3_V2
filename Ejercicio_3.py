@@ -12,7 +12,7 @@ def resolver_rally_espacial():
     ]
     
     # Ordenaciones
-    naves_ordenadas_por_nombre = sorted(naves, key=lambda x: x.nombre)
+    naves_ordenadas_por_nombre = sorted(naves, key=lambda x: x.nombre, reverse=True)
     naves_ordenadas_por_longitud = sorted(naves, key=lambda x: x.longitud, reverse=True)
     cinco_mas_pasajeros = sorted(naves, key=lambda x: x.pasajeros, reverse=True)[:5]
     
@@ -27,12 +27,35 @@ def resolver_rally_espacial():
     naves_con_mas_seis_pasajeros = [n for n in naves if n.pasajeros >= 6]
     
     # Impresiones
-    print("Naves ordenadas por nombre:", naves_ordenadas_por_nombre)
-    print("Naves ordenadas por longitud descendente:", naves_ordenadas_por_longitud)
-    print("Info de Cometa Veloz y Titán del Cosmos:", info_cometa_titan)
-    print("Cinco naves con más pasajeros:", cinco_mas_pasajeros)
-    print("Nave con más tripulantes:", nave_mas_tripulantes)
-    print("Naves cuyo nombre comienza con GX:", naves_con_gx)
-    print("Naves con 6 o más pasajeros:", naves_con_mas_seis_pasajeros)
-    print("Nave más pequeña:", nave_mas_pequena)
-    print("Nave más grande:", nave_mas_grande)
+    print("\n--- Naves ordenadas por nombre (ascendente) ---")
+    for nave in naves_ordenadas_por_nombre:
+        print(nave)
+    
+    print("\n--- Naves ordenadas por longitud (descendente) ---")
+    for nave in naves_ordenadas_por_longitud:
+        print(nave)
+    
+    print("\n--- Info de Cometa Veloz y Titán del Cosmos ---")
+    for nave in info_cometa_titan:
+        print(nave)
+    
+    print("\n--- Cinco naves con más pasajeros ---")
+    for nave in cinco_mas_pasajeros:
+        print(nave)
+    
+    print("\n--- Nave con más tripulantes ---")
+    print(nave_mas_tripulantes)
+    
+    print("\n--- Naves cuyo nombre comienza con GX ---")
+    for nave in naves_con_gx:
+        print(nave)
+    
+    print("\n--- Naves con 6 o más pasajeros ---")
+    for nave in naves_con_mas_seis_pasajeros:
+        print(nave)
+    
+    print("\n--- Nave más pequeña ---")
+    print(nave_mas_pequena)
+    
+    print("\n--- Nave más grande ---")
+    print(nave_mas_grande)
