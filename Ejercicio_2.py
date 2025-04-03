@@ -1,19 +1,17 @@
 import numpy as np
 
 def determinante_recursivo(matriz):
-    return (matriz[0][0] * (matriz[1][1] * matriz[2][2] - matriz[1][2] * matriz[2][1])
-            - matriz[0][1] * (matriz[1][0] * matriz[2][2] - matriz[1][2] * matriz[2][0])
-            + matriz[0][2] * (matriz[1][0] * matriz[2][1] - matriz[1][1] * matriz[2][0]))
-
-def determinante_iterativo(matriz):
-    return np.linalg.det(matriz)
+    """Calcula el determinante de una matriz 3x3 de forma manual."""
+    a, b, c = matriz[0]
+    d, e, f = matriz[1]
+    g, h, i = matriz[2]
+    return (a * (e * i - f * h)
+            - b * (d * i - f * g)
+            + c * (d * h - e * g))
 
 def resolver_cifra_magica():
+    """Genera una matriz 3x3 aleatoria y calcula su determinante."""
     matriz = np.random.randint(1, 10, (3, 3))
-    print("Matriz:")
-    print(matriz)
-    if matriz.shape == (3, 3):
-        print("Determinante (recursivo):", determinante_recursivo(matriz))
-        print("Determinante (iterativo):", determinante_iterativo(matriz))
-    else:
-        print("Error: La matriz no es de tamaño 3x3.")
+    print("Matriz:\n", matriz)
+    print("Determinante (recursivo):", determinante_recursivo(matriz))
+    print("Determinante (iterativo):", round(np.linalg.det(matriz), 2))
